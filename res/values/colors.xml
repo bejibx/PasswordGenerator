@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="separator">#ff0063ff</color>
+    <color name="button_background">#ffffff</color>
+    <color name="button_background_pressed">#ffffff</color>
+    <color name="button_border">@color/separator</color>
+    <color name="button_border_pressed">#ffff5e00</color>
+    <color name="flatButtonOrange">#ffff9f65</color>
+    <color name="flatButtonGreen">#ff56b449</color>
+    <color name="flatButtonBlue">#ff1189b4</color>
+    <color name="flatButtonGray">#ff7c807f</color>
+
+</resources>

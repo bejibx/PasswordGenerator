@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="gridCellSize">80.0dip</dimen>
+    <dimen name="menuButtonMinHeight">100.0dip</dimen>
+    <dimen name="menuButtonMaxHeight">100.0dip</dimen>
+    <dimen name="menuButtonMinWidth">100.0dip</dimen>
+    <dimen name="menuButtonMaxWidth">200.0dip</dimen>
+
+</resources>

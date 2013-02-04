@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:custom="http://schemas.android.com/apk/res/com.example.untitled"
+        android:orientation="vertical"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="40.0dip"
+        >
+
+    <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:typeface="monospace"
+            />
+
+    <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            >
+
+        <com.example.untitled.FlatButton
+                android:layout_width="240.0dip"
+                android:layout_height="120.0dip"
+                android:orientation="horizontal"
+                android:layout_margin="5.0dip"
+                android:background="@color/flatButtonBlue"
+                custom:text="@string/generate"
+                custom:iconSource="@drawable/run"
+                custom:textSize="18.0sp"/>
+
+        <com.example.untitled.FlatButton
+                android:layout_width="240.0dip"
+                android:layout_height="120.0dip"
+                android:orientation="horizontal"
+                android:layout_margin="5.0dip"
+                android:background="@color/flatButtonGreen"
+                custom:text="@string/copyToClipboard"
+                custom:iconSource="@drawable/clipboard"/>
+
+        <!--<com.example.untitled.FlatButton-->
+                <!--android:layout_width="240.0dip"-->
+                <!--android:layout_height="120.0dip"-->
+                <!--android:orientation="horizontal"-->
+                <!--android:layout_margin="5.0dip"-->
+                <!--custom:drawCorner="true"-->
+                <!--custom:cornerColor="#f00"-->
+                <!--android:background="@color/flatButtonOrange"-->
+                <!--custom:text="@string/allowableSymbols"-->
+                <!--custom:iconSource="@drawable/letters"/>-->
+
+        <RelativeLayout
+                android:layout_width="240.0dip"
+                android:layout_height="120.0dip"
+                android:layout_margin="5.0dip"
+                android:background="@color/flatButtonGray">
+
+            <!--suppress AndroidLintHardcodedText -->
+            <EditText
+                    android:layout_width="84.0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:inputType="numberDecimal"
+                    android:text="64"
+                    android:textSize="52.0sp"
+                    android:textColor="#000"/>
+
+            <com.example.untitled.TriangleButton
+                    android:layout_width="80.0dip"
+                    android:layout_height="80.dip"
+                    android:clickable="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentRight="true"
+                    custom:direction="bottomRight"/>
+
+            <com.example.untitled.TriangleButton
+                    android:layout_width="80.0dip"
+                    android:layout_height="80.dip"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentLeft="true"
+                    custom:direction="topLeft"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+            android:id="@+id/categories"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:orientation="vertical"/>
+
+</LinearLayout>

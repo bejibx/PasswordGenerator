@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="FlatButton">
+        <attr name="drawCorner" format="boolean"/>
+        <attr name="cornerColor" format="color"/>
+        <attr name="textColor" format="color"/>
+        <attr name="iconSource" format="integer"/>
+        <attr name="text" format="string"/>
+        <attr name="textSize" format="dimension"/>
+    </declare-styleable>
+
+    <declare-styleable name="TriangleButton">
+        <attr name="direction" format="enum">
+            <enum name="topLeft" value="0"/>
+            <enum name="topRight" value="1"/>
+            <enum name="bottomLeft" value="2"/>
+            <enum name="bottomRight" value="3"/>
+        </attr>
+    </declare-styleable>
+
+</resources>

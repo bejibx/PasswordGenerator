@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="MyTheme" parent="android:Theme">
+
+    </style>
+
+    <style name="FlatButton">
+        <item name="android:layout_height">120.0dip</item>
+        <item name="android:layout_width">240.0dip</item>
+    </style>
+
+    <style name="separator">
+        <item name="android:background">@color/separator</item>
+    </style>
+
+    <style name="separator.horizontal">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1.0dip</item>
+    </style>
+
+    <style name="separator.vertical">
+        <item name="android:layout_width">1.0dip</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <style name="gridElement">
+        <item name="android:layout_height">60.0dip</item>
+        <item name="android:layout_width">60.0dip</item>
+    </style>
+
+</resources>

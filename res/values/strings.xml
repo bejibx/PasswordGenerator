@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">untitled</string>
+
+    <string name="uppercaseLetters">Заглавные буквы</string>
+    <string name="lowercaseLetters">Строчные буквы</string>
+    <string name="generate">Сгенерировать</string>
+    <string name="copyToClipboard">Копировать</string>
+    <string name="allowableSymbols">Допустимые символы</string>
+
+
+    <string name="desc_lettersIcon">Иконка "Символы"</string>
+    <string name="desc_cornerIcon">Переход на другую активность</string>
+</resources>
