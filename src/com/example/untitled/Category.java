@@ -1,23 +1,60 @@
 package com.example.untitled;
 
-import android.content.Context;
-import android.widget.BaseAdapter;
+import android.graphics.Color;
+
+import java.util.TreeSet;
 
 public class Category {
 
-    private final String mName;
-    private final GridElementAdapter mGrid;
+    public static class Element implements Comparable {
+        public static final boolean DEFAULT_ENABLING = true;
 
-    public Category(String name, GridElementAdapter gridElementAdapter) {
+        public char letter;
+        public boolean enabled = DEFAULT_ENABLING;
+
+        public Element(char letter) {
+            this.letter = letter;
+        }
+
+        public Element(char letter, boolean enabled) {
+            this.letter = letter;
+            this.enabled = enabled;
+        }
+
+        @Override
+        public int compareTo(Object o) {
+            if (o instanceof Element) {
+                return ((Element) o).letter - this.letter;
+            } else {
+                return -1;
+            }
+        }
+    }
+
+    private final String mName;
+    private final int mColor;
+    private final TreeSet<Element> mElements = new TreeSet<Element>();
+
+    public static final int DEFAULT_COLOR = Color.BLACK;
+
+    public Category(String name, int color) {
         mName = name;
-        mGrid = gridElementAdapter;
+        mColor = color;
     }
 
     public String getName() {
         return mName;
     }
 
-    public GridElementAdapter getAdapter() {
-        return mGrid;
+    public int getColor() {
+        return mColor;
+    }
+
+    public boolean containsElement(char letter) {
+        return mElements.contains(new Element(letter));
+    }
+
+    public void addElement(Element element) {
+        mElements.add(element);
     }
 }

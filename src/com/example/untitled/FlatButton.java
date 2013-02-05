@@ -25,6 +25,8 @@ public class FlatButton extends LinearLayout {
     private String mText;
     private Drawable mIconSource;
     private float mTextSize;
+    private int mDirection;
+    private int mLength;
 
     private void setCustomAttributes(Context context, AttributeSet attributes) {
         TypedArray a = context.obtainStyledAttributes(attributes, R.styleable.FlatButton);
@@ -36,6 +38,8 @@ public class FlatButton extends LinearLayout {
         mTextColor = a.getColor(R.styleable.FlatButton_textColor, Color.BLACK);
         mTextSize = a.getDimension(R.styleable.FlatButton_textSize,
                 18.0f * context.getResources().getDisplayMetrics().scaledDensity);
+        mDirection = a.getInteger(R.styleable.FlatButton_direction, 3);
+        mLength = (int) a.getDimension(R.styleable.FlatButton_cornerHeight, 60);
     }
 
     private void prepareButton() {
@@ -89,12 +93,45 @@ public class FlatButton extends LinearLayout {
         super.dispatchDraw(canvas);
 
         if (mDrawCorner) {
-            int x = getWidth(), y = getHeight();
+            Point start = new Point();
+            Point move = new Point();
+
+            switch (mDirection) {
+                case 0:
+                    start.x = 0;
+                    start.y = 0;
+                    move.x = mLength;
+                    move.y = mLength;
+                    break;
+
+                case 1:
+                    start.x = getWidth();
+                    start.y = 0;
+                    move.x = getWidth() - mLength;
+                    move.y = mLength;
+                    break;
+
+                case 2:
+                    start.x = 0;
+                    start.y = getHeight();
+                    move.x = mLength;
+                    move.y = getHeight() - mLength;
+                    break;
+
+                default:
+                case 3:
+                    start.x = getWidth();
+                    start.y = getHeight();
+                    move.x = getWidth() - mLength;
+                    move.y = getHeight() - mLength;
+                    break;
+            }
+
             Path path = new Path();
-            path.moveTo(x, y);
-            path.lineTo(x - 75, y);
-            path.lineTo(x, y - 75);
-            path.lineTo(x, y);
+            path.moveTo(start.x, start.y);
+            path.lineTo(move.x, start.y);
+            path.lineTo(start.x, move.y);
+            path.lineTo(start.x, start.y);
             path.close();
 
             Paint paint = new Paint();

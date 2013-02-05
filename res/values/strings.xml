@@ -8,7 +8,11 @@
     <string name="copyToClipboard">Копировать</string>
     <string name="allowableSymbols">Допустимые символы</string>
 
-
     <string name="desc_lettersIcon">Иконка "Символы"</string>
     <string name="desc_cornerIcon">Переход на другую активность</string>
+
+    <string name="error_minLength">Минимальная длина пароля - %1$d символ%2$s.</string>
+    <string name="error_maxLength">Максимальная длина пароля - %1$d символ%2$s.</string>
+    <string name="error_end">а</string>
+
 </resources>

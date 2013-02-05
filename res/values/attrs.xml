@@ -8,15 +8,13 @@
         <attr name="iconSource" format="integer"/>
         <attr name="text" format="string"/>
         <attr name="textSize" format="dimension"/>
-    </declare-styleable>
-
-    <declare-styleable name="TriangleButton">
         <attr name="direction" format="enum">
             <enum name="topLeft" value="0"/>
             <enum name="topRight" value="1"/>
             <enum name="bottomLeft" value="2"/>
             <enum name="bottomRight" value="3"/>
         </attr>
+        <attr name="cornerHeight" format="dimension"/>
     </declare-styleable>
 
 </resources>

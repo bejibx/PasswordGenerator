@@ -23,15 +23,15 @@ public class CategoryAdapter {
         mCategories.add(category);
     }
 
-    public void attachToView(ViewGroup parent) {
-        for (Category c : mCategories) {
-            View header = mInflater.inflate(R.layout.category_header, parent, false);
-            ((TextView) header.findViewById(R.id.Text)).setText(c.getName());
-            parent.addView(header);
-            GridView grid = (GridView) mInflater.inflate(R.layout.category_grid, parent, false);
-            grid.setAdapter(c.getAdapter());
-            parent.addView(grid);
-        }
-    }
+//    public void attachToView(ViewGroup parent) {
+//        for (Category c : mCategories) {
+//            View header = mInflater.inflate(R.layout.category_header, parent, false);
+//            ((TextView) header.findViewById(R.id.Text)).setText(c.getName());
+//            parent.addView(header);
+//            GridView grid = (GridView) mInflater.inflate(R.layout.category_grid, parent, false);
+//            grid.setAdapter(c.getAdapter());
+//            parent.addView(grid);
+//        }
+//    }
 
 }

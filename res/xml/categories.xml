@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<categories>
+
+    <category name="@string/uppercaseLetters" color="#000000">
+        <item letter="A" enabled="true"/>
+        <item letter="B" enabled="true"/>
+        <item letter="C" enabled="true"/>
+        <item letter="D" enabled="true"/>
+        <item letter="E" enabled="true"/>
+        <item letter="F" enabled="true"/>
+        <item letter="G" enabled="true"/>
+        <item letter="H" enabled="true"/>
+        <item letter="I" enabled="true"/>
+        <item letter="J" enabled="true"/>
+        <item letter="K" enabled="true"/>
+        <item letter="L" enabled="true"/>
+        <item letter="M" enabled="true"/>
+        <item letter="N" enabled="true"/>
+        <item letter="O" enabled="true"/>
+        <item letter="P" enabled="true"/>
+        <item letter="Q" enabled="true"/>
+        <item letter="R" enabled="true"/>
+        <item letter="S" enabled="true"/>
+        <item letter="T" enabled="true"/>
+        <item letter="U" enabled="true"/>
+        <item letter="V" enabled="true"/>
+        <item letter="W" enabled="true"/>
+        <item letter="X" enabled="true"/>
+        <item letter="Y" enabled="true"/>
+        <item letter="Z" enabled="true"/>
+    </category>
+
+    <category name="Lowercase" color="#FF0000">
+        <item letter="a" enabled="true"/>
+        <item letter="b" enabled="true"/>
+        <item letter="c" enabled="true"/>
+        <item letter="d" enabled="true"/>
+        <item letter="e" enabled="true"/>
+        <item letter="f" enabled="true"/>
+        <item letter="g" enabled="true"/>
+        <item letter="h" enabled="true"/>
+        <item letter="i" enabled="true"/>
+        <item letter="j" enabled="true"/>
+        <item letter="k" enabled="true"/>
+        <item letter="l" enabled="true"/>
+        <item letter="m" enabled="true"/>
+        <item letter="n" enabled="true"/>
+        <item letter="o" enabled="true"/>
+        <item letter="p" enabled="true"/>
+        <item letter="q" enabled="true"/>
+        <item letter="r" enabled="true"/>
+        <item letter="s" enabled="true"/>
+        <item letter="t" enabled="true"/>
+        <item letter="u" enabled="true"/>
+        <item letter="v" enabled="true"/>
+        <item letter="w" enabled="true"/>
+        <item letter="x" enabled="true"/>
+        <item letter="y" enabled="true"/>
+        <item letter="z" enabled="true"/>
+    </category>
+
+    <category name="Numbers" color="#00FF00">
+        <item letter="0" enabled="true"/>
+        <item letter="1" enabled="true"/>
+        <item letter="2" enabled="true"/>
+        <item letter="3" enabled="true"/>
+        <item letter="4" enabled="true"/>
+        <item letter="5" enabled="true"/>
+        <item letter="6" enabled="true"/>
+        <item letter="7" enabled="true"/>
+        <item letter="8" enabled="true"/>
+        <item letter="9" enabled="true"/>
+    </category>
+
+    <category name="Punctuation" color="#00FFFF">
+        <item letter="!" enabled="true"/>
+        <item letter="\?" enabled="true"/>
+        <item letter="." enabled="true"/>
+        <item letter="," enabled="true"/>
+        <item letter=":" enabled="true"/>
+        <item letter=";" enabled="true"/>
+        <item letter="(" enabled="true"/>
+        <item letter=")" enabled="true"/>
+        <item letter="[" enabled="true"/>
+        <item letter="]" enabled="true"/>
+        <item letter="{" enabled="true"/>
+        <item letter="}" enabled="true"/>
+        <item letter="&lt;" enabled="true"/>
+        <item letter="&gt;" enabled="true"/>
+        <item letter="&quot;" enabled="true"/>
+        <item letter="&apos;" enabled="true"/>
+        <item letter="'" enabled="true"/>
+        <item letter=" " enabled="true"/>
+    </category>
+
+    <category name="Typography" color="#00FFFF">
+        <item letter="&amp;" enabled="true"/>
+        <item letter="*" enabled="true"/>
+        <item letter="\@" enabled="true"/>
+        <item letter="\" enabled="true"/>
+        <item letter="^" enabled="true"/>
+        <item letter="%" enabled="true"/>
+        <item letter="\#" enabled="true"/>
+        <item letter="№" enabled="true"/>
+        <item letter="~" enabled="true"/>
+        <item letter="_" enabled="true"/>
+        <item letter="|" enabled="true"/>
+        <item letter="+" enabled="true"/>
+        <item letter="=" enabled="true"/>
+    </category>
+
+</categories>

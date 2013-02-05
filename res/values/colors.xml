@@ -6,9 +6,12 @@
     <color name="button_background_pressed">#ffffff</color>
     <color name="button_border">@color/separator</color>
     <color name="button_border_pressed">#ffff5e00</color>
-    <color name="flatButtonOrange">#ffff9f65</color>
+    <color name="flatButtonOrange">#ffe58246</color>
     <color name="flatButtonGreen">#ff56b449</color>
     <color name="flatButtonBlue">#ff1189b4</color>
-    <color name="flatButtonGray">#ff7c807f</color>
+    <color name="flatButtonGray">#fff7e4ff</color>
+
+    <color name="numericButton">#ffb6ce72</color>
+    <color name="numericButtonPressed">#ffff9224</color>
 
 </resources>
