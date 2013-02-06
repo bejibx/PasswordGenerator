@@ -6,6 +6,7 @@ import android.graphics.*;
 import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.ViewGroup;
@@ -27,6 +28,9 @@ public class FlatButton extends LinearLayout {
     private float mTextSize;
     private int mDirection;
     private int mLength;
+    private int mCornerColorPressed;
+
+    private int mColorBuffer;
 
     private void setCustomAttributes(Context context, AttributeSet attributes) {
         TypedArray a = context.obtainStyledAttributes(attributes, R.styleable.FlatButton);
@@ -40,6 +44,7 @@ public class FlatButton extends LinearLayout {
                 18.0f * context.getResources().getDisplayMetrics().scaledDensity);
         mDirection = a.getInteger(R.styleable.FlatButton_direction, 3);
         mLength = (int) a.getDimension(R.styleable.FlatButton_cornerHeight, 60);
+        mCornerColorPressed = a.getColor(R.styleable.FlatButton_cornerColorPressed, mCornerColor);
     }
 
     private void prepareButton() {
@@ -89,6 +94,12 @@ public class FlatButton extends LinearLayout {
     }
 
     @Override
+    protected void onDraw(Canvas canvas) {
+        mColorBuffer = isPressed() ? mCornerColorPressed : mCornerColor;
+        super.onDraw(canvas);
+    }
+
+    @Override
     protected void dispatchDraw(Canvas canvas) {
         super.dispatchDraw(canvas);
 
@@ -135,7 +146,7 @@ public class FlatButton extends LinearLayout {
             path.close();
 
             Paint paint = new Paint();
-            paint.setColor(mCornerColor);
+            paint.setColor(mColorBuffer);
             canvas.drawPath(path, paint);
         }
     }

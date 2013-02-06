@@ -2,6 +2,8 @@ package com.example.untitled;
 
 import android.graphics.Color;
 
+import java.util.Collections;
+import java.util.Set;
 import java.util.TreeSet;
 
 public class Category {
@@ -24,7 +26,7 @@ public class Category {
         @Override
         public int compareTo(Object o) {
             if (o instanceof Element) {
-                return ((Element) o).letter - this.letter;
+                return (((Element) o).letter - this.letter) * -1;
             } else {
                 return -1;
             }
@@ -32,12 +34,12 @@ public class Category {
     }
 
     private final String mName;
-    private final int mColor;
+    private final String mColor;
     private final TreeSet<Element> mElements = new TreeSet<Element>();
 
-    public static final int DEFAULT_COLOR = Color.BLACK;
+    public static final String DEFAULT_COLOR = String.format("#%06X", 0xFFFFFF & Color.BLACK);
 
-    public Category(String name, int color) {
+    public Category(String name, String color) {
         mName = name;
         mColor = color;
     }
@@ -46,7 +48,7 @@ public class Category {
         return mName;
     }
 
-    public int getColor() {
+    public String getColor() {
         return mColor;
     }
 
@@ -56,5 +58,9 @@ public class Category {
 
     public void addElement(Element element) {
         mElements.add(element);
+    }
+
+    public Set<Element> elements() {
+        return Collections.unmodifiableSet(mElements);
     }
 }

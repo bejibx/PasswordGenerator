@@ -7,6 +7,10 @@
     <string name="generate">Сгенерировать</string>
     <string name="copyToClipboard">Копировать</string>
     <string name="allowableSymbols">Допустимые символы</string>
+    <string name="numbers">Цифры</string>
+    <string name="punctuationMarks">Знаки пунктуации</string>
+    <string name="typographyMarks">Типографские и прочие символы</string>
+    <string name="space">Пробел</string>
 
     <string name="desc_lettersIcon">Иконка "Символы"</string>
     <string name="desc_cornerIcon">Переход на другую активность</string>

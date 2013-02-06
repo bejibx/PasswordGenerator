@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-
 <LinearLayout
         android:id="@+id/root"
         xmlns:android="http://schemas.android.com/apk/res/android"
@@ -105,21 +104,17 @@
                     android:layout_margin="5.0dip"
                     custom:drawCorner="true"
                     custom:cornerColor="@color/flatButtonBlue"
-                    android:background="@color/flatButtonOrange"
+                    android:background="@drawable/flat_orange"
                     custom:text="@string/allowableSymbols"
-                    custom:iconSource="@drawable/letters"/>
+                    custom:iconSource="@drawable/letters"
+                    android:clickable="true"
+                    android:onClick="onAvailableSymbolsClick"
+                    />
 
 
 
         </LinearLayout>
 
     </LinearLayout>
-
-
-    <LinearLayout
-            android:id="@+id/categories"
-            android:layout_height="match_parent"
-            android:layout_width="match_parent"
-            android:orientation="vertical"/>
 
 </LinearLayout>

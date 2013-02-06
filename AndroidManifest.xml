@@ -12,10 +12,11 @@
             android:label="@string/app_name"
             android:icon="@drawable/ic_launcher"
             android:theme="@style/MyTheme"
+            android:name="._Application"
             >
 
         <activity
-                android:name=".MyActivity"
+                android:name="._Main"
                 android:label="@string/app_name"
                 android:windowSoftInputMode="stateHidden"
                 >
@@ -24,5 +25,9 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+
+        <activity
+            android:name="._AvailableSymbols"/>
+
     </application>
 </manifest>

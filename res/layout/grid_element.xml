@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<Button xmlns:android="http://schemas.android.com/apk/res/android"
+<Button
+        xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_height="@dimen/gridCellSize"
-        android:layout_width="match_parent"
+        android:layout_width="@dimen/gridCellSize"
+        android:textSize="42.0sp"
         />
