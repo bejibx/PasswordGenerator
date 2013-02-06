@@ -34,12 +34,12 @@ public class Category {
     }
 
     private final String mName;
-    private final String mColor;
+    private final int mColor;
     private final TreeSet<Element> mElements = new TreeSet<Element>();
 
-    public static final String DEFAULT_COLOR = String.format("#%06X", 0xFFFFFF & Color.BLACK);
+    public static final int DEFAULT_COLOR = Color.BLACK;
 
-    public Category(String name, String color) {
+    public Category(String name, int color) {
         mName = name;
         mColor = color;
     }
@@ -48,7 +48,7 @@ public class Category {
         return mName;
     }
 
-    public String getColor() {
+    public int getColor() {
         return mColor;
     }
 

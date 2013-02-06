@@ -5,18 +5,19 @@ import android.content.res.TypedArray;
 import android.graphics.*;
 import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
-import android.util.DisplayMetrics;
-import android.util.Log;
 import android.util.TypedValue;
 import android.view.Gravity;
-import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import java.util.concurrent.TimeUnit;
-
 public class FlatButton extends LinearLayout {
+
+    public static final int TOP_LEFT = 0;
+    public static final int TOP_RIGHT = 1;
+    public static final int BOTTOM_LEFT = 2;
+    public static final int BOTTOM_RIGHT = 3;
+
 
     private final Context mContext;
 
@@ -108,21 +109,21 @@ public class FlatButton extends LinearLayout {
             Point move = new Point();
 
             switch (mDirection) {
-                case 0:
+                case TOP_LEFT:
                     start.x = 0;
                     start.y = 0;
                     move.x = mLength;
                     move.y = mLength;
                     break;
 
-                case 1:
+                case TOP_RIGHT:
                     start.x = getWidth();
                     start.y = 0;
                     move.x = getWidth() - mLength;
                     move.y = mLength;
                     break;
 
-                case 2:
+                case BOTTOM_LEFT:
                     start.x = 0;
                     start.y = getHeight();
                     move.x = mLength;
@@ -130,7 +131,7 @@ public class FlatButton extends LinearLayout {
                     break;
 
                 default:
-                case 3:
+                case BOTTOM_RIGHT:
                     start.x = getWidth();
                     start.y = getHeight();
                     move.x = getWidth() - mLength;
