@@ -4,62 +4,16 @@ import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Point;
 import android.os.Bundle;
-import android.text.*;
+import android.text.Editable;
+import android.text.Spannable;
+import android.text.TextWatcher;
+import android.text.style.ForegroundColorSpan;
 import android.view.Display;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 
 public class _Main extends Activity {
-
-//    public class PasswordLengthFilter implements InputFilter {
-//
-//        private final int mMinValue, mMaxValue;
-//
-//        public PasswordLengthFilter(int min, int max) {
-//            mMinValue = min;
-//            mMaxValue = max;
-//        }
-//
-//        @Override
-//        public CharSequence filter(CharSequence source, int start, int end, Spanned dest, int dstart, int dend) {
-//            StringBuilder result = new StringBuilder(dest);
-//            result.replace(dstart, dend, source.toString());
-//
-//            if (result.length() == 0) {
-//                return String.valueOf(MIN_LENGTH);
-//            } else {
-//                String maxValue = String.valueOf(mMaxValue);
-//                if (result.length() > maxValue.length()) {
-//                    return null;
-//                }
-//            } .length()){
-//                return S
-//            } else {
-//                try {
-//                    int isInRange = isInRange( Integer.parseInt(result.toString()) );
-//
-//                    if (isInRange != 0) {
-//                        return String.valueOf(MAX_LENGTH).substring(dstart, dend + 1);
-//                    } else {
-//                        return null;
-//                    }
-//                } catch (NumberFormatException nfe) { }
-//            }
-//
-//            return "";
-//        }
-//
-//        private int isInRange(int input) {
-//            if (input > mMaxValue) {
-//                return 1;
-//            } else if (input < mMinValue) {
-//                return -1;
-//            } else {
-//                return 0;
-//            }
-//        }
-//    }
 
     private EditText mEdit_passwordLength;
     private EditText mEdit_password;
@@ -122,34 +76,65 @@ public class _Main extends Activity {
                         ));
                     }
                 } catch (NumberFormatException nfe) {
-                    mEdit_passwordLength.setText(String.valueOf(MIN_LENGTH));
-                    mEdit_passwordLength.setSelection(editable.length() - 1);
+                    String replacement = String.valueOf(MIN_LENGTH);
+                    mEdit_passwordLength.setText(replacement);
+                    mEdit_passwordLength.setSelection(0, replacement.length());
                 }
             }
         });
 
-        mEdit_password.setFilters(new InputFilter[]{new InputFilter() {
+        mEdit_password.addTextChangedListener(new TextWatcher() {
+
+            String lastText = "";
+            int newCount;
+            int replacementStart;
+
             @Override
-            public CharSequence filter(CharSequence source, int start, int end, Spanned dest, int dstart, int dend) {
-                if (source.length() > 0) {
-                    StringBuilder builder = new StringBuilder();
-                    for (int i = start; i < end; i++) {
-                        char current = source.charAt(i);
-                        builder
-                                .append("<font color=\"")
-                                .append(mCategoryAdapter.getColorForLetter(current))
-                                .append("\">")
-                                .append(current)
-                                .append("</font>");
+            public void beforeTextChanged(CharSequence charSequence, int i, int i2, int i3) {}
 
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                newCount = count;
+                replacementStart = start;
+            }
 
+            @Override
+            public void afterTextChanged(Editable editable) {
+                if (!editable.toString().equals(lastText)) {
+                    for (int i = replacementStart; i < replacementStart + newCount; i++) {
+                        editable.setSpan(
+                                new ForegroundColorSpan(
+                                    mCategoryAdapter.getColorForLetter(editable.charAt(i))
+                                ),
+                                i, i + 1, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
+                        );
                     }
-                    return Html.fromHtml(builder.toString());
-                } else {
-                    return null;
                 }
             }
-        }});
+        });
+
+//        mEdit_password.setFilters(new InputFilter[]{new InputFilter() {
+//            @Override
+//            public CharSequence filter(CharSequence source, int start, int end, Spanned dest, int dstart, int dend) {
+//                if (source.length() > 0) {
+//                    StringBuilder builder = new StringBuilder();
+//                    for (int i = start; i < end; i++) {
+//                        char current = source.charAt(i);
+//                        builder
+//                                .append("<font color=\"")
+//                                .append(mCategoryAdapter.getColorForLetter(current))
+//                                .append("\">")
+//                                .append(current)
+//                                .append("</font>");
+//
+//
+//                    }
+//                    return Html.fromHtml(builder.toString());
+//                } else {
+//                    return null;
+//                }
+//            }
+//        }});
 
     }
 

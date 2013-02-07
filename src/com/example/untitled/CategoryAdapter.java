@@ -62,20 +62,20 @@ public class CategoryAdapter {
                             case  2:
                                 if (parser.getName().equals("category")) {
                                     String name = "";
-                                    String color = "";
+                                    int color = Color.TRANSPARENT;
                                     for (int i = 0; i < parser.getAttributeCount(); i++) {
                                         if ( parser.getAttributeName(i).equals("name") ) {
                                             name = parser.getAttributeValue(i);
                                         } else if (parser.getAttributeName(i).equals("color")) {
                                             try {
                                                 Color.parseColor(parser.getAttributeValue(i));
-                                                color = parser.getAttributeValue(i);
+                                                color = Color.parseColor(parser.getAttributeValue(i));
                                             } catch (IllegalArgumentException argEx) {
                                                 color = Category.DEFAULT_COLOR;
                                             }
                                         }
                                     }
-                                    if (color.length() == 0) {
+                                    if (color == Color.TRANSPARENT) {
                                         color = Category.DEFAULT_COLOR;
                                     }
                                     if (name.length() > 0) {
@@ -134,7 +134,7 @@ public class CategoryAdapter {
         }
     }
 
-    public String getColorForLetter(char letter) {
+    public int getColorForLetter(char letter) {
         for (Category c : mCategories) {
             if (c.containsElement(letter)) {
                 return c.getColor();
