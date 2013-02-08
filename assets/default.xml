@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<profile>
+<profile name="Default">
 
     <category name="Uppercase" color="#000000">
         <item letter="A" enabled="true"/>

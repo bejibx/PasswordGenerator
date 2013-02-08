@@ -39,7 +39,7 @@ public class _Main extends Activity {
 
         Display display = getWindowManager().getDefaultDisplay();
         display.getSize(mDisplaySize);
-        mCategoryAdapter = ((_Application)getApplication()).getAdapter();
+        mCategoryAdapter = ((_Application)getApplication()).getProfiller().getCategories();
 
         mEdit_passwordLength = (EditText)findViewById(R.id.length);
         mEdit_password = (EditText)findViewById(R.id.result);

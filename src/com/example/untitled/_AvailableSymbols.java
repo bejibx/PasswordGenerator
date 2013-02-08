@@ -12,6 +12,7 @@ public class _AvailableSymbols extends Activity {
 
         setContentView(R.layout._available_symbols);
 
-       ((_Application)getApplication()).getAdapter().attachToView((ViewGroup)findViewById(R.id.categories));
+       ((_Application)getApplication()).getProfiller().getCategories()
+               .attachToView((ViewGroup)findViewById(R.id.categories));
     }
 }

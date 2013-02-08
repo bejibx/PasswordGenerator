@@ -29,7 +29,7 @@ public class GridElementAdapter extends BaseAdapter {
         while((hi - lo) > threshold) {
             float size = (hi + lo) / 2;
             mTestPaint.setTextSize(size);
-            if(mTestPaint.measureText(text) >= containerWidth) {
+            if (mTestPaint.measureText(text) >= containerWidth) {
                 hi = size; // too big
             } else {
                 lo = size; // too small
@@ -90,4 +90,6 @@ public class GridElementAdapter extends BaseAdapter {
         }
         return result;
     }
+
+
 }
